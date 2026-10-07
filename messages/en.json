@@ -1,0 +1,406 @@
+{
+  "metadata": {
+    "title": "GitHub Profile Builder",
+    "description": "Organize and improve how your GitHub profile looks, with drafts, README templates and a preview before you apply anything."
+  },
+  "layout": {
+    "skipToContent": "Skip to content",
+    "footer": "Independent project, not affiliated with GitHub."
+  },
+  "localeSwitcher": {
+    "label": "Language",
+    "pt-BR": "Português",
+    "en": "English"
+  },
+  "userMenu": {
+    "avatarAlt": "{login}'s avatar",
+    "signOut": "Sign out"
+  },
+  "drafts": {
+    "title": "Drafts",
+    "listTitle": "Your drafts",
+    "newDraft": "New draft",
+    "empty": "You have no drafts yet. Create the first one from your current profile.",
+    "updatedAt": "Updated {date}",
+    "duplicate": "Duplicate",
+    "delete": "Delete",
+    "confirmDelete": "Delete the draft “{title}”? This cannot be undone.",
+    "copyTitle": "{title} (copy)",
+    "defaultTitle": "Draft from {date}",
+    "errors": {
+      "limitReached": "You reached the limit of {max} drafts. Delete one to create another.",
+      "github": "We could not read your GitHub profile. Please try again.",
+      "database": "We could not reach the database. Please try again.",
+      "notFound": "This draft no longer exists."
+    },
+    "new": {
+      "title": "New draft",
+      "description": "The draft starts with your current GitHub profile data. Editing the draft changes nothing on GitHub.",
+      "titleLabel": "Draft name",
+      "titleHint": "Optional. If left blank, today's date is used.",
+      "submit": "Create draft",
+      "submitting": "Creating…",
+      "back": "Back to drafts",
+      "readmeNote": "README: if your profile README was published by this app, the draft starts with the same settings. A README written another way is not imported; the draft starts from the default template and only replaces the current one if you apply it."
+    },
+    "selectAll": "Select all",
+    "selectDraft": "Select “{title}”",
+    "selected": "{count, plural, =0 {None selected} one {# selected} other {# selected}}",
+    "bulkDuplicate": "Duplicate selected",
+    "bulkDelete": "Delete selected",
+    "confirmBulkDelete": "{count, plural, one {Delete # draft?} other {Delete # drafts?}} This cannot be undone.",
+    "bulkLabel": "Actions on selected drafts"
+  },
+  "apply": {
+    "title": "Review and apply to GitHub",
+    "intro": "Check what will change on your profile. Nothing is sent to GitHub until you confirm.",
+    "back": "Back to the draft",
+    "open": "Review and apply to GitHub",
+    "saveFirst": "Save the draft before reviewing and applying.",
+    "include": "Apply this part",
+    "noChanges": "Nothing to change: it already matches GitHub.",
+    "current": "Current",
+    "next": "New",
+    "empty": "(empty)",
+    "yes": "Yes",
+    "no": "No",
+    "parts": {
+      "profile": "Profile details",
+      "social": "Social accounts",
+      "readme": "Profile README"
+    },
+    "fields": {
+      "name": "Name",
+      "bio": "Bio",
+      "location": "Location",
+      "company": "Company",
+      "blog": "Website",
+      "twitterUsername": "X (Twitter)",
+      "hireable": "Available for hire",
+      "email": "Public email"
+    },
+    "emailRemovalNote": "If GitHub does not accept removing the public email through the API, do it in Settings → Public profile.",
+    "social": {
+      "add": "Add",
+      "remove": "Remove"
+    },
+    "readme": {
+      "create-repo": "The public {login}/{login} repository does not exist and will be created to show the README on your profile.",
+      "create-file": "The {login}/{login} repository has no README yet; it will be created.",
+      "update": "The current README of {login}/{login} will be replaced. GitHub keeps the commit history, so the previous version can be recovered.",
+      "tabsLabel": "README version",
+      "nextTab": "New README",
+      "currentTab": "Current README",
+      "blocked": "Your repositories could not be read right now and this README lists projects. To avoid publishing without them, the README cannot be applied. Reload the page to try again."
+    },
+    "limits": "These cannot be changed through the API and will not be applied: avatar and pinned repositories.",
+    "submit": "Apply changes to GitHub",
+    "applying": "Applying…",
+    "confirm": "Apply changes to GitHub?\n\nParts: {parts}",
+    "nothingToApply": "There is nothing to apply: your GitHub already matches this draft.",
+    "results": {
+      "title": "Result",
+      "steps": {
+        "profile": "Profile details",
+        "email": "Public email",
+        "socialRemove": "Social accounts removed",
+        "socialAdd": "Social accounts added",
+        "repository": "Creating the {login}/{login} repository",
+        "readme": "README"
+      },
+      "applied": "Applied",
+      "failed": "Not applied",
+      "reasons": {
+        "expired": "Your GitHub session expired or was revoked. Sign in again and retry.",
+        "rateLimited": "GitHub is temporarily limiting requests. Wait a few minutes and retry.",
+        "permission": "GitHub denied permission for this change.",
+        "validation": "GitHub rejected the data that was sent.",
+        "privateRepoExists": "A private {login}/{login} repository already exists. The README only shows on your profile if that repository is public: make it public in its GitHub settings and retry.",
+        "github": "Could not reach GitHub. Please retry.",
+        "conflict": "Your GitHub profile changed since the review. Reload the page to review again.",
+        "unknown": "GitHub did not answer in time: the change may or may not have been made. Reload the page to check the current state.",
+        "notAttempted": "Not attempted because the previous step failed."
+      },
+      "githubSays": "GitHub says: {detail}",
+      "allApplied": "Done: the selected changes were applied to GitHub.",
+      "someFailed": "Some changes were not applied. The draft is still saved and you can retry.",
+      "viewProfile": "View my GitHub profile",
+      "unconfirmed": "Not confirmed",
+      "unconfirmedHelp": "GitHub accepted the request, but the change does not show on your profile. Check on GitHub; you may need to do it manually in Settings → Public profile."
+    },
+    "errors": {
+      "stale": "Your GitHub profile or this draft changed since the review was opened. Nothing was applied. Reload the page to review again.",
+      "nothingSelected": "Select at least one part to apply.",
+      "github": "We could not read your GitHub profile right now. Nothing was applied. Please retry.",
+      "notFound": "This draft no longer exists.",
+      "database": "We could not read the draft. Nothing was applied. Please retry.",
+      "readmeBlocked": "The README was not applied because your repositories could not be read. Nothing was applied. Reload the page and retry.",
+      "loginChanged": "Your GitHub username changed since you signed in. Sign out and in again before applying."
+    },
+    "field": "Field",
+    "confirmCreateRepo": "Note: a public {login}/{login} repository will be created on your account.",
+    "reload": "Reload"
+  },
+  "readmePreview": {
+    "title": "README preview",
+    "note": "Rendered by GitHub itself from the Markdown that will be published. Nothing is sent to your profile here.",
+    "viewLabel": "View",
+    "visual": "Visual",
+    "markdown": "Markdown",
+    "copy": "Copy Markdown",
+    "copied": "Markdown copied.",
+    "copyFailed": "Could not copy. Select the text and copy it manually.",
+    "updating": "Updating preview…",
+    "empty": "No section has content yet. Turn sections on and fill in the texts in the README tab.",
+    "missingProjects": "{count, plural, one {This project was not found among your public repositories and will be left out of the README:} other {These projects were not found among your public repositories and will be left out of the README:}} {names}",
+    "errors": {
+      "github": "We could not render the visual preview right now. The Markdown view shows the exact content.",
+      "rateLimited": "GitHub is temporarily limiting requests. The visual preview returns in a few minutes; the Markdown view stays up to date.",
+      "tooLarge": "The README is too large for the visual preview.",
+      "expired": "Your GitHub session expired or was revoked. Save the draft and sign in again to see the visual preview."
+    }
+  },
+  "readmeEditor": {
+    "intro": "The README shows at the top of your profile and comes from the {login}/{login} repository.",
+    "template": {
+      "legend": "Template",
+      "classic": {
+        "name": "Classic",
+        "description": "Technology icons and projects as a list."
+      },
+      "minimal": {
+        "name": "Minimal",
+        "description": "Text only: technologies as “Java · C# · Python”, no images."
+      },
+      "compact": {
+        "name": "Compact",
+        "description": "Smaller icons and projects in a table."
+      }
+    },
+    "language": {
+      "legend": "README language",
+      "hint": "Language of the template's fixed texts, such as section titles.",
+      "pt-BR": "Português",
+      "en": "English"
+    },
+    "sections": {
+      "legend": "Sections",
+      "hint": "Turn each section on or off and use the arrows to change the order. The greeting always stays at the top. Switching templates does not change the order.",
+      "greeting": "Greeting",
+      "intro": "Introduction",
+      "technologies": "Technologies",
+      "projects": "Projects",
+      "contact": "Contact",
+      "fixedFirst": "Always at the top",
+      "moveUp": "Move “{section}” up",
+      "moveDown": "Move “{section}” down",
+      "moved": "“{section}” is now in position {position} of {total}.",
+      "resetOrder": "Use the template's suggested order",
+      "orderReset": "Template order restored."
+    },
+    "fields": {
+      "greeting": "Greeting text",
+      "intro": "Introduction text"
+    },
+    "hints": {
+      "greeting": "If blank, the template uses a default greeting with your name.",
+      "contact": "Uses the links set in the Profile tab: website, public email, X and social accounts.",
+      "intro": "Up to {max} characters. Markdown is allowed: lists, links, **bold**. Use the title to show “About me” above the text."
+    },
+    "technologies": {
+      "categories": {
+        "languages": "Languages",
+        "frameworks": "Frameworks",
+        "databases": "Databases",
+        "tools": "Tools"
+      },
+      "attribution": "Icons: Devicon (MIT License)."
+    },
+    "projects": {
+      "hint": "Choose up to {max} of your public repositories.",
+      "selected": "Repositories in the README: {count} of {max}",
+      "empty": "You have no public repositories yet.",
+      "unavailable": "We could not load your repositories right now. Reload the page to try again.",
+      "missing": "not found on GitHub",
+      "fork": "fork",
+      "archived": "archived"
+    },
+    "headings": {
+      "title": "Title (optional)",
+      "categoryTitle": "Category title (optional)",
+      "hint": "Recommended: “{fallback}”. Clear the text to show no title.",
+      "none": "No title",
+      "useRecommended": "Use recommended"
+    },
+    "contactStyle": {
+      "legend": "How to show contacts",
+      "list": {
+        "name": "List",
+        "description": "One contact per line, with the full address."
+      },
+      "inline": {
+        "name": "Inline links",
+        "description": "Website • X • LinkedIn, on a single line."
+      },
+      "icons": {
+        "name": "Icons",
+        "description": "Only each network's icon, clickable."
+      },
+      "attribution": "Network icons: Simple Icons (CC0) and Devicon (MIT). Website, email and other links: Material Design Icons (Apache 2.0)."
+    },
+    "custom": {
+      "add": "Add custom section",
+      "hint": "Create up to {max} sections of your own, like “Learning”, “Skills” or “Certifications”, with text and/or technologies. {count} of {max} created.",
+      "fallbackName": "Custom section {number}",
+      "added": "Custom section added at the end of the list.",
+      "removed": "“{name}” removed.",
+      "remove": "Remove",
+      "removeLabel": "Remove “{name}”",
+      "title": "Title (optional)",
+      "titlePlaceholder": "E.g. Learning",
+      "titleHint": "Leave it empty to show the section without a title.",
+      "text": "Text (optional)",
+      "textHint": "Markdown is allowed, as in “About me”.",
+      "technologies": "Technologies (optional): {count} of {max} selected",
+      "groupByCategory": "Group by category (Languages, Frameworks...). Unchecked, everything goes in a single list."
+    }
+  },
+  "draftEditor": {
+    "back": "Back to drafts",
+    "tabs": {
+      "label": "Draft parts",
+      "profile": "Profile",
+      "readme": "README"
+    },
+    "sections": {
+      "draft": "Draft",
+      "profile": "Profile details",
+      "social": "Social accounts"
+    },
+    "fields": {
+      "title": "Draft name",
+      "name": "Name",
+      "bio": "Bio",
+      "location": "Location",
+      "company": "Company",
+      "blog": "Website",
+      "twitterUsername": "X (Twitter) username",
+      "email": "Public email",
+      "hireable": "Available for hire",
+      "socialAccount": "Social account {number}"
+    },
+    "hints": {
+      "title": "Only for you to identify the draft. It is not sent to GitHub.",
+      "bio": "Up to {max} characters.",
+      "twitterUsername": "Without @.",
+      "email": "GitHub only accepts one of your account's verified emails as the public email.",
+      "social": "Up to {max} links, with the full URL (https://…).",
+      "hireable": "Tells GitHub you are open to job offers. Recruiting tools can read it; it is not shown prominently on your profile."
+    },
+    "emailNone": "Don't show an email",
+    "emailsUnavailable": "We could not load your verified emails right now. Reload the page to try again.",
+    "unsaved": "Unsaved changes",
+    "confirmDiscard": "You have unsaved changes. Leave and discard them?",
+    "preview": {
+      "title": "Profile preview",
+      "note": "A visual approximation of your GitHub profile sidebar. Avatar and pinned repositories are not changed here."
+    },
+    "limitsNote": "Avatar and pinned repositories cannot be changed through the GitHub API. Change them directly on GitHub.",
+    "save": "Save draft",
+    "saving": "Saving…",
+    "saved": "Draft saved. Nothing was changed on GitHub.",
+    "errors": {
+      "required": "Required.",
+      "tooLong": "Use at most {max} characters.",
+      "invalidUrl": "Use full URLs starting with http:// or https://.",
+      "invalidUsername": "Use up to 15 letters, numbers or _.",
+      "invalidEmail": "Choose one of your verified GitHub emails.",
+      "invalidOption": "Choose a valid option.",
+      "tooMany": "Use at most {max} links.",
+      "form": "Fix the highlighted fields.",
+      "failed": "We could not save. Your changes are still in the form; please try again.",
+      "notFound": "This draft was deleted and can no longer be saved."
+    },
+    "pageTitle": "Edit draft"
+  },
+  "profile": {
+    "title": "Your current GitHub profile",
+    "description": "Data read from GitHub just now. Nothing here changes without your confirmation.",
+    "viewOnGitHub": "View on GitHub",
+    "notSet": "Not set",
+    "fields": {
+      "location": "Location",
+      "company": "Company",
+      "blog": "Website",
+      "email": "Public email",
+      "twitter": "X (Twitter)",
+      "hireable": "Available for hire"
+    },
+    "yes": "Yes",
+    "no": "No",
+    "socialAccounts": "Social accounts",
+    "noSocialAccounts": "No social accounts added.",
+    "readme": {
+      "title": "Profile README",
+      "no-public-repo": "No public {login}/{login} repository found. That repository shows the README on your profile, and GitHub only displays it when the repository is public.",
+      "no-readme": "The {login}/{login} repository exists but has no README yet.",
+      "ready": "Your profile README is published at {login}/{login}."
+    },
+    "repositories": "{count, plural, =0 {No public repositories} one {# public repository} other {# public repositories}}",
+    "pinned": {
+      "title": "Pinned repositories",
+      "empty": "No pinned repositories.",
+      "note": "The GitHub API cannot change pinned repositories. To change them, use “Customize your pins” on your GitHub profile."
+    },
+    "loading": "Loading your GitHub profile…",
+    "errors": {
+      "rateLimited": "GitHub is temporarily limiting requests. Wait a few minutes and try again.",
+      "generic": "We could not load your GitHub data right now.",
+      "retry": "Try again"
+    }
+  },
+  "home": {
+    "errors": {
+      "session_expired": "Your GitHub session expired or was revoked. Please sign in again.",
+      "access_denied": "You cancelled the authorization on GitHub. Try again whenever you like.",
+      "invalid_state": "The sign-in expired or could not be verified. Please sign in again.",
+      "oauth_failed": "We could not complete the sign-in with GitHub. Please try again."
+    },
+    "title": "Make your GitHub profile truly yours",
+    "description": "Start from your current profile, build your introduction with README templates and see the result before applying any change.",
+    "signIn": "Sign in with GitHub",
+    "safetyNote": "Nothing changes on your GitHub without your confirmation.",
+    "stepsTitle": "How it works",
+    "steps": {
+      "connect": {
+        "title": "Sign in with GitHub",
+        "description": "Your current profile becomes the starting point."
+      },
+      "edit": {
+        "title": "Edit a draft",
+        "description": "Adjust your details and pick a README template."
+      },
+      "apply": {
+        "title": "Review and apply",
+        "description": "Check the preview and confirm before anything is sent to GitHub."
+      }
+    }
+  },
+  "errorPage": {
+    "title": "Something went wrong",
+    "description": "An unexpected error happened while loading this page. Your saved drafts were not affected.",
+    "retry": "Try again",
+    "home": "Go to the start page"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "This address does not exist, or the draft was deleted.",
+    "drafts": "See my drafts"
+  },
+  "loading": {
+    "page": "Loading…"
+  },
+  "charCount": {
+    "remaining": "{count, plural, =0 {Character limit reached} one {# character left} other {# characters left}}"
+  }
+}

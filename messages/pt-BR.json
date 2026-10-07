@@ -1,0 +1,406 @@
+{
+  "metadata": {
+    "title": "GitHub Profile Builder",
+    "description": "Organize e melhore a apresentação do seu perfil do GitHub com rascunhos, templates de README e prévia antes de aplicar."
+  },
+  "layout": {
+    "skipToContent": "Pular para o conteúdo",
+    "footer": "Projeto independente, sem afiliação com o GitHub."
+  },
+  "localeSwitcher": {
+    "label": "Idioma",
+    "pt-BR": "Português",
+    "en": "English"
+  },
+  "userMenu": {
+    "avatarAlt": "Avatar de {login}",
+    "signOut": "Sair"
+  },
+  "drafts": {
+    "title": "Rascunhos",
+    "listTitle": "Seus rascunhos",
+    "newDraft": "Novo rascunho",
+    "empty": "Você ainda não tem rascunhos. Crie o primeiro a partir do seu perfil atual.",
+    "updatedAt": "Atualizado em {date}",
+    "duplicate": "Duplicar",
+    "delete": "Excluir",
+    "confirmDelete": "Excluir o rascunho “{title}”? Essa ação não pode ser desfeita.",
+    "copyTitle": "{title} (cópia)",
+    "defaultTitle": "Rascunho de {date}",
+    "errors": {
+      "limitReached": "Você atingiu o limite de {max} rascunhos. Exclua algum para criar outro.",
+      "github": "Não foi possível ler seu perfil do GitHub. Tente novamente.",
+      "database": "Não foi possível acessar o banco de dados. Tente novamente.",
+      "notFound": "Este rascunho não existe mais."
+    },
+    "new": {
+      "title": "Novo rascunho",
+      "description": "O rascunho começa com os dados atuais do seu perfil do GitHub. Editar o rascunho não altera nada no GitHub.",
+      "titleLabel": "Nome do rascunho",
+      "titleHint": "Opcional. Se ficar em branco, usamos a data de hoje.",
+      "submit": "Criar rascunho",
+      "submitting": "Criando…",
+      "back": "Voltar para rascunhos",
+      "readmeNote": "README: se o README do seu perfil foi publicado por este app, o rascunho começa com as mesmas configurações. Um README escrito de outra forma não é importado; o rascunho começa do modelo padrão e só substitui o atual se você aplicar."
+    },
+    "selectAll": "Selecionar todos",
+    "selectDraft": "Selecionar “{title}”",
+    "selected": "{count, plural, =0 {Nenhum selecionado} one {# selecionado} other {# selecionados}}",
+    "bulkDuplicate": "Duplicar selecionados",
+    "bulkDelete": "Excluir selecionados",
+    "confirmBulkDelete": "{count, plural, one {Excluir # rascunho?} other {Excluir # rascunhos?}} Essa ação não pode ser desfeita.",
+    "bulkLabel": "Ações nos rascunhos selecionados"
+  },
+  "apply": {
+    "title": "Revisar e aplicar no GitHub",
+    "intro": "Confira o que será alterado no seu perfil. Nada é enviado ao GitHub até você confirmar.",
+    "back": "Voltar para o rascunho",
+    "open": "Revisar e aplicar no GitHub",
+    "saveFirst": "Salve o rascunho antes de revisar e aplicar.",
+    "include": "Aplicar esta parte",
+    "noChanges": "Nada a alterar: já está igual no GitHub.",
+    "current": "Atual",
+    "next": "Novo",
+    "empty": "(vazio)",
+    "yes": "Sim",
+    "no": "Não",
+    "parts": {
+      "profile": "Dados do perfil",
+      "social": "Redes sociais",
+      "readme": "README do perfil"
+    },
+    "fields": {
+      "name": "Nome",
+      "bio": "Bio",
+      "location": "Localização",
+      "company": "Empresa",
+      "blog": "Site",
+      "twitterUsername": "X (Twitter)",
+      "hireable": "Disponível para contratação",
+      "email": "E-mail público"
+    },
+    "emailRemovalNote": "Se o GitHub não aceitar remover o e-mail público pela API, faça isso em Settings → Public profile.",
+    "social": {
+      "add": "Adicionar",
+      "remove": "Remover"
+    },
+    "readme": {
+      "create-repo": "O repositório público {login}/{login} não existe e será criado para exibir o README no seu perfil.",
+      "create-file": "O repositório {login}/{login} ainda não tem README; ele será criado.",
+      "update": "O README atual de {login}/{login} será substituído. O GitHub guarda o histórico de commits, então a versão anterior pode ser recuperada.",
+      "tabsLabel": "Versão do README",
+      "nextTab": "Novo README",
+      "currentTab": "README atual",
+      "blocked": "Não foi possível ler seus repositórios agora e este README lista projetos. Para não publicar sem eles, o README não pode ser aplicado. Recarregue a página para tentar de novo."
+    },
+    "limits": "Não podem ser alterados pela API e não serão aplicados: avatar e repositórios fixados.",
+    "submit": "Aplicar alterações no GitHub",
+    "applying": "Aplicando…",
+    "confirm": "Aplicar alterações no GitHub?\n\nPartes: {parts}",
+    "nothingToApply": "Não há nada para aplicar: seu GitHub já está igual a este rascunho.",
+    "results": {
+      "title": "Resultado",
+      "steps": {
+        "profile": "Dados do perfil",
+        "email": "E-mail público",
+        "socialRemove": "Redes sociais removidas",
+        "socialAdd": "Redes sociais adicionadas",
+        "repository": "Criação do repositório {login}/{login}",
+        "readme": "README"
+      },
+      "applied": "Aplicado",
+      "failed": "Não aplicado",
+      "reasons": {
+        "expired": "Sua sessão do GitHub expirou ou foi revogada. Entre novamente e tente de novo.",
+        "rateLimited": "O GitHub limitou temporariamente as requisições. Aguarde alguns minutos e tente de novo.",
+        "permission": "O GitHub negou permissão para esta alteração.",
+        "validation": "O GitHub recusou os dados enviados.",
+        "privateRepoExists": "Já existe um repositório privado {login}/{login}. O README só aparece no perfil se esse repositório for público: torne-o público nas configurações dele no GitHub e tente de novo.",
+        "github": "Não foi possível se comunicar com o GitHub. Tente de novo.",
+        "conflict": "Seu perfil no GitHub mudou desde a revisão. Recarregue a página para revisar de novo.",
+        "unknown": "O GitHub não respondeu a tempo: a alteração pode ou não ter sido feita. Recarregue a página para conferir o estado atual.",
+        "notAttempted": "Não foi tentado porque o passo anterior falhou."
+      },
+      "githubSays": "Mensagem do GitHub: {detail}",
+      "allApplied": "Pronto: as alterações selecionadas foram aplicadas no GitHub.",
+      "someFailed": "Algumas alterações não foram aplicadas. O rascunho continua salvo e você pode tentar de novo.",
+      "viewProfile": "Ver meu perfil no GitHub",
+      "unconfirmed": "Não confirmado",
+      "unconfirmedHelp": "O GitHub aceitou o pedido, mas a alteração não aparece no seu perfil. Confira no GitHub; pode ser preciso fazer manualmente em Settings → Public profile."
+    },
+    "errors": {
+      "stale": "Seu perfil no GitHub ou este rascunho mudou desde que a revisão foi aberta. Nada foi aplicado. Recarregue a página para revisar de novo.",
+      "nothingSelected": "Selecione ao menos uma parte para aplicar.",
+      "github": "Não foi possível ler seu perfil no GitHub agora. Nada foi aplicado. Tente de novo.",
+      "notFound": "Este rascunho não existe mais.",
+      "database": "Não foi possível ler o rascunho. Nada foi aplicado. Tente de novo.",
+      "readmeBlocked": "O README não foi aplicado porque seus repositórios não puderam ser lidos. Nada foi aplicado. Recarregue a página e tente de novo.",
+      "loginChanged": "Seu nome de usuário no GitHub mudou desde que você entrou. Saia e entre novamente antes de aplicar."
+    },
+    "field": "Campo",
+    "confirmCreateRepo": "Atenção: será criado o repositório público {login}/{login} na sua conta.",
+    "reload": "Recarregar"
+  },
+  "readmePreview": {
+    "title": "Prévia do README",
+    "note": "Gerada pelo próprio GitHub a partir do Markdown que será publicado. Nada é enviado ao seu perfil aqui.",
+    "viewLabel": "Visualização",
+    "visual": "Visual",
+    "markdown": "Markdown",
+    "copy": "Copiar Markdown",
+    "copied": "Markdown copiado.",
+    "copyFailed": "Não foi possível copiar. Selecione o texto e copie manualmente.",
+    "updating": "Atualizando prévia…",
+    "empty": "Nenhuma seção com conteúdo ainda. Ligue seções e preencha os textos na aba README.",
+    "missingProjects": "{count, plural, one {Este projeto não foi encontrado nos seus repositórios públicos e ficará fora do README:} other {Estes projetos não foram encontrados nos seus repositórios públicos e ficarão fora do README:}} {names}",
+    "errors": {
+      "github": "Não foi possível gerar a prévia visual agora. A aba Markdown mostra o conteúdo exato.",
+      "rateLimited": "O GitHub limitou temporariamente as requisições. A prévia visual volta em alguns minutos; a aba Markdown continua atualizada.",
+      "tooLarge": "O README ficou grande demais para a prévia visual.",
+      "expired": "Sua sessão do GitHub expirou ou foi revogada. Salve o rascunho e entre novamente para ver a prévia visual."
+    }
+  },
+  "readmeEditor": {
+    "intro": "O README aparece no topo do seu perfil e vem do repositório {login}/{login}.",
+    "template": {
+      "legend": "Template",
+      "classic": {
+        "name": "Clássico",
+        "description": "Ícones das tecnologias e projetos em lista."
+      },
+      "minimal": {
+        "name": "Minimalista",
+        "description": "Só texto: tecnologias como “Java · C# · Python”, sem imagens."
+      },
+      "compact": {
+        "name": "Compacto",
+        "description": "Ícones menores e projetos em tabela."
+      }
+    },
+    "language": {
+      "legend": "Idioma do README",
+      "hint": "Idioma dos textos fixos do template, como os títulos das seções.",
+      "pt-BR": "Português",
+      "en": "English"
+    },
+    "sections": {
+      "legend": "Seções",
+      "hint": "Ligue ou desligue cada seção e use as setas para mudar a ordem. A saudação fica sempre no topo. Trocar de template não muda a ordem.",
+      "greeting": "Saudação",
+      "intro": "Introdução",
+      "technologies": "Tecnologias",
+      "projects": "Projetos",
+      "contact": "Contato",
+      "fixedFirst": "Sempre no topo",
+      "moveUp": "Mover “{section}” para cima",
+      "moveDown": "Mover “{section}” para baixo",
+      "moved": "“{section}” agora está na posição {position} de {total}.",
+      "resetOrder": "Usar a ordem sugerida pelo template",
+      "orderReset": "Ordem do template restaurada."
+    },
+    "fields": {
+      "greeting": "Texto da saudação",
+      "intro": "Texto da introdução"
+    },
+    "hints": {
+      "greeting": "Em branco, o template usa uma saudação padrão com o seu nome.",
+      "contact": "Usa os links definidos na aba Perfil: site, e-mail público, X e redes sociais.",
+      "intro": "Até {max} caracteres. Aceita Markdown: listas, links, **negrito**. Use o título para mostrar “Sobre mim” acima do texto."
+    },
+    "technologies": {
+      "categories": {
+        "languages": "Linguagens",
+        "frameworks": "Frameworks",
+        "databases": "Bancos de dados",
+        "tools": "Ferramentas"
+      },
+      "attribution": "Ícones: Devicon (licença MIT)."
+    },
+    "projects": {
+      "hint": "Escolha até {max} dos seus repositórios públicos.",
+      "selected": "Repositórios no README: {count} de {max}",
+      "empty": "Você ainda não tem repositórios públicos.",
+      "unavailable": "Não foi possível carregar seus repositórios agora. Recarregue a página para tentar de novo.",
+      "missing": "não encontrado no GitHub",
+      "fork": "fork",
+      "archived": "arquivado"
+    },
+    "headings": {
+      "title": "Título (opcional)",
+      "categoryTitle": "Título da categoria (opcional)",
+      "hint": "Recomendação: “{fallback}”. Apague o texto para não mostrar título.",
+      "none": "Sem título",
+      "useRecommended": "Usar recomendação"
+    },
+    "contactStyle": {
+      "legend": "Como mostrar os contatos",
+      "list": {
+        "name": "Lista",
+        "description": "Um contato por linha, com o endereço completo."
+      },
+      "inline": {
+        "name": "Links em linha",
+        "description": "Site • X • LinkedIn, numa linha só."
+      },
+      "icons": {
+        "name": "Ícones",
+        "description": "Só o ícone de cada rede, clicável."
+      },
+      "attribution": "Ícones das redes: Simple Icons (CC0) e Devicon (MIT). Site, e-mail e outros links: Material Design Icons (Apache 2.0)."
+    },
+    "custom": {
+      "add": "Adicionar seção personalizada",
+      "hint": "Crie até {max} seções suas, como “Estudando”, “Skills” ou “Certificações”, com texto e/ou tecnologias. {count} de {max} criadas.",
+      "fallbackName": "Seção personalizada {number}",
+      "added": "Seção personalizada adicionada no fim da lista.",
+      "removed": "“{name}” removida.",
+      "remove": "Remover",
+      "removeLabel": "Remover “{name}”",
+      "title": "Título (opcional)",
+      "titlePlaceholder": "Ex.: Estudando",
+      "titleHint": "Vazio, a seção aparece sem título.",
+      "text": "Texto (opcional)",
+      "textHint": "Aceita Markdown, como em “Sobre mim”.",
+      "technologies": "Tecnologias (opcional): {count} de {max} selecionadas",
+      "groupByCategory": "Separar por categoria (Linguagens, Frameworks...). Desmarcado, fica tudo numa lista só."
+    }
+  },
+  "draftEditor": {
+    "back": "Voltar para rascunhos",
+    "tabs": {
+      "label": "Partes do rascunho",
+      "profile": "Perfil",
+      "readme": "README"
+    },
+    "sections": {
+      "draft": "Rascunho",
+      "profile": "Dados do perfil",
+      "social": "Redes sociais"
+    },
+    "fields": {
+      "title": "Nome do rascunho",
+      "name": "Nome",
+      "bio": "Bio",
+      "location": "Localização",
+      "company": "Empresa",
+      "blog": "Site",
+      "twitterUsername": "Usuário no X (Twitter)",
+      "email": "E-mail público",
+      "hireable": "Disponível para contratação",
+      "socialAccount": "Rede social {number}"
+    },
+    "hints": {
+      "title": "Só para você identificar o rascunho. Não vai para o GitHub.",
+      "bio": "Até {max} caracteres.",
+      "twitterUsername": "Sem @.",
+      "email": "O GitHub só aceita como e-mail público um dos e-mails verificados da sua conta.",
+      "social": "Até {max} links, com URL completa (https://…).",
+      "hireable": "Sinaliza no GitHub que você está disponível para propostas de trabalho. Ferramentas de recrutamento podem ler essa informação; ela não aparece em destaque no seu perfil."
+    },
+    "emailNone": "Não mostrar e-mail",
+    "emailsUnavailable": "Não foi possível carregar seus e-mails verificados agora. Recarregue a página para tentar de novo.",
+    "unsaved": "Alterações não salvas",
+    "confirmDiscard": "Você tem alterações não salvas. Sair e descartá-las?",
+    "preview": {
+      "title": "Prévia do perfil",
+      "note": "Aproximação visual da barra lateral do seu perfil no GitHub. Avatar e repositórios fixados não mudam por aqui."
+    },
+    "limitsNote": "Avatar e repositórios fixados não podem ser alterados pela API do GitHub. Altere-os diretamente no GitHub.",
+    "save": "Salvar rascunho",
+    "saving": "Salvando…",
+    "saved": "Rascunho salvo. Nada foi alterado no GitHub.",
+    "errors": {
+      "required": "Campo obrigatório.",
+      "tooLong": "Use no máximo {max} caracteres.",
+      "invalidUrl": "Use URLs completas começando com http:// ou https://.",
+      "invalidUsername": "Use até 15 letras, números ou _.",
+      "invalidEmail": "Escolha um dos seus e-mails verificados no GitHub.",
+      "invalidOption": "Escolha uma opção válida.",
+      "tooMany": "Use no máximo {max} links.",
+      "form": "Corrija os campos destacados.",
+      "failed": "Não foi possível salvar. Seus dados continuam no formulário; tente novamente.",
+      "notFound": "Este rascunho foi excluído e não pode mais ser salvo."
+    },
+    "pageTitle": "Editar rascunho"
+  },
+  "profile": {
+    "title": "Seu perfil atual no GitHub",
+    "description": "Dados lidos agora do GitHub. Nada aqui é alterado sem a sua confirmação.",
+    "viewOnGitHub": "Ver no GitHub",
+    "notSet": "Não informado",
+    "fields": {
+      "location": "Localização",
+      "company": "Empresa",
+      "blog": "Site",
+      "email": "E-mail público",
+      "twitter": "X (Twitter)",
+      "hireable": "Disponível para contratação"
+    },
+    "yes": "Sim",
+    "no": "Não",
+    "socialAccounts": "Redes sociais",
+    "noSocialAccounts": "Nenhuma rede social adicionada.",
+    "readme": {
+      "title": "README de perfil",
+      "no-public-repo": "Nenhum repositório público {login}/{login} encontrado. É ele que exibe o README no seu perfil, e o GitHub só mostra o README quando esse repositório é público.",
+      "no-readme": "O repositório {login}/{login} existe, mas ainda não tem README.",
+      "ready": "Seu README de perfil está publicado em {login}/{login}."
+    },
+    "repositories": "{count, plural, =0 {Nenhum repositório público} one {# repositório público} other {# repositórios públicos}}",
+    "pinned": {
+      "title": "Repositórios fixados",
+      "empty": "Nenhum repositório fixado.",
+      "note": "A API do GitHub não permite alterar repositórios fixados. Para mudar, use “Customize your pins” no seu perfil do GitHub."
+    },
+    "loading": "Carregando seu perfil do GitHub…",
+    "errors": {
+      "rateLimited": "O GitHub limitou temporariamente as requisições. Aguarde alguns minutos e tente novamente.",
+      "generic": "Não foi possível carregar seus dados do GitHub agora.",
+      "retry": "Tentar novamente"
+    }
+  },
+  "home": {
+    "errors": {
+      "session_expired": "Sua sessão do GitHub expirou ou foi revogada. Entre novamente.",
+      "access_denied": "Você cancelou a autorização no GitHub. Tente novamente quando quiser.",
+      "invalid_state": "O login expirou ou não pôde ser verificado. Tente entrar novamente.",
+      "oauth_failed": "Não foi possível concluir o login com o GitHub. Tente novamente."
+    },
+    "title": "Deixe seu perfil do GitHub com a sua cara",
+    "description": "Comece pelo seu perfil atual, monte a apresentação com templates de README e veja o resultado antes de aplicar qualquer alteração.",
+    "signIn": "Entrar com GitHub",
+    "safetyNote": "Nada é alterado no seu GitHub sem a sua confirmação.",
+    "stepsTitle": "Como funciona",
+    "steps": {
+      "connect": {
+        "title": "Entre com GitHub",
+        "description": "Seu perfil atual vira o ponto de partida."
+      },
+      "edit": {
+        "title": "Edite um rascunho",
+        "description": "Ajuste seus dados e escolha um template de README."
+      },
+      "apply": {
+        "title": "Revise e aplique",
+        "description": "Confira a prévia e confirme antes de enviar ao GitHub."
+      }
+    }
+  },
+  "errorPage": {
+    "title": "Algo deu errado",
+    "description": "Ocorreu um erro inesperado ao carregar esta página. Seus rascunhos salvos não foram afetados.",
+    "retry": "Tentar novamente",
+    "home": "Ir para o início"
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "description": "Este endereço não existe, ou o rascunho foi excluído.",
+    "drafts": "Ver meus rascunhos"
+  },
+  "loading": {
+    "page": "Carregando…"
+  },
+  "charCount": {
+    "remaining": "{count, plural, =0 {Limite de caracteres atingido} one {Resta # caractere} other {Restam # caracteres}}"
+  }
+}
